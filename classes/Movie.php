@@ -8,28 +8,31 @@
      */
     class Movie
     {
+        public $image;
         public $title;
         public $language;
         public $overview;
-        public $relaseDate;
+        public $releaseDate;
         public $vote;
 
 
         /**
          * Movie function
          *
-         * @param strin $title
+         * @param string $image
+         * @param string $title
          * @param string $language
          * @param string $overview
-         * @param string $relaseDate
-         * @param 
+         * @param string $releaseDate
+         * @param int $vote
          */
-        function __construct(string $title, string $language, string $overview, string $relaseDate, int $vote)
+        function __construct(string $image, string $title, string $language, string $overview, string $releaseDate, int $vote)
         {
+            $this->image = $image;
             $this->title = $title;
             $this->language = $language;
             $this->overview = $overview;
-            $this->relaseDate = $relaseDate;
+            $this->releaseDate = $releaseDate;
             $this->vote = $vote;
         }
 
