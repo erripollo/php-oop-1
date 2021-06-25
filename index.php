@@ -60,11 +60,51 @@
         padding: 0;
     }
 
+    body {
+        background-color: gray;
+    }
+
     header {
         background-color: black;
         color: white;
         text-align: center;
         padding: 1.5rem;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        height: 550px;
+        width: 300px;
+        margin: 1.5rem;
+        background-color: white;
+        padding: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .card img {
+        width: 100%;
+    }
+
+    .card h2 {
+        margin: 0.5rem 0;
+    }
+
+    .card_footer {
+        margin-top: 1rem;
+        font-size: 0.8rem;
+        display: flex;
+        justify-content: space-between;
+        color: gray;
     }
     </style>
 </head>
@@ -81,10 +121,12 @@
 
             <?php foreach ($movies as $movie) : ?>
             <div class="card">
-                <img src="<?php echo $movie->image ?>" alt="">
-                <h2><?php echo $movie->title ?></h2>
-                <p><?php echo $movie->overview ?></p>
-                <div>
+                <div class="card_main">
+                    <img src="<?php echo $movie->image ?>" alt="">
+                    <h2><?php echo $movie->title ?></h2>
+                    <p><?php echo $movie->overview ?></p>
+                </div>
+                <div class="card_footer">
                     <span>Language: <?php echo $movie->language ?></span>
                     <span>Date of release: <?php echo $movie->releaseDate ?></span>
                     <span>Vote: <?php echo $movie->vote ?></span>
